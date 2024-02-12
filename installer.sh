@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Update and upgrade system packages
-sudo apt update && sudo apt upgrade -y
-
-# Install Docker, Docker Compose, and Podman
-sudo apt install docker.io docker-compose -y
-sudo apt install podman-docker -y
-
 # Install Bitping
 curl https://bitping.com/install.sh | bash
 
