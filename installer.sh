@@ -14,21 +14,21 @@ curl https://bitping.com/install.sh | bash
 if [ -x "$(command -v bitpingd)" ]; then
   echo "Bitping installed successfully."
 
-  # Login to Bitping
-  echo "Logging in to Bitping..."
-  bitpingd login
+# Login to Bitping
+echo "Logging in to Bitping..."
+$target_dir/bitpingd login
 
-  # Install Bitping service
-  echo "Installing Bitping service..."
-  sudo bitpingd service install
+# Start Bitping service
+echo "Starting Bitping service..."
+sudo systemctl start bitpingd.service
 
   # Start Bitping service
   echo "Starting Bitping service..."
   sudo systemctl start bitpingd
 
-  # Enable Bitping service to start on boot
-  echo "Enabling Bitping service to start on boot..."
-  sudo systemctl enable bitpingd
+# Enable Bitping service to start on boot
+echo "Enabling Bitping service to start on boot..."
+sudo systemctl enable bitpingd.service
 
   # Login to Bitping with email and password
   echo "Logging in to Bitping with email and password..."
